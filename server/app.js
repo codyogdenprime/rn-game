@@ -18,3 +18,5 @@ harrypotter.get( '/', function( req, res ) {
 } );
 
 harrypotter.use( express.static( 'public' ) );
+
+//Cody Change

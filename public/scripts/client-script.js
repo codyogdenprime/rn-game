@@ -1,7 +1,18 @@
 var roundCount = 1;
 
 var startGame = function() {
-
+	$.ajax({
+		url: '/api',
+		type: 'post',
+		dataType: 'json',
+		data: {
+			action: "start",
+		},
+	})
+	.done( function( data ) {
+		console.log( 'Data:', data );
+	});
+	
 };
 
 var totalRounds = function() {
@@ -16,8 +27,6 @@ var abortGame = function() {
 
 	if( !abortCheck ) return false;
 
-
-
 };
 
 var endGame = function() {
@@ -30,6 +39,10 @@ var submitGuess = function() {
 
 var restartGame = function() {
 
+};
+
+var setStatus = function( player, status ) {
+	return $( '.player'+ player + ' div[class^="status-"]' ).removeClass().addClass( 'status-' + status );
 };
 
 $(document).ready(function() {

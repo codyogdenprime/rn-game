@@ -1,0 +1,439 @@
+/*
+
+// This is the SCSS that compiles the below CSS.
+
+div[class^="status-"] {
+  height: 1em;
+  width: 100%;
+  background: linear-gradient( to right, #4888D8, #CD2606);
+  display: flex;
+  flex-flow: row-nowrap;
+  align-items: center;
+}
+div[class^="status-"]:before {
+  display: block;
+  height: 1.25em;
+  width: 2px;
+  background-color: #FAFAFA;
+  border: 1px solid #333;
+  content: '';
+  transition: all 1s ease-in-out;
+}
+@for $i from 2 through 99 {
+  div.status-#{$i}:before {
+    margin-left: ( $i * 1% );
+  }
+}
+
+*/
+
+div[class^="status-"] {
+  height: 1em;
+  width: 100%;
+  background: linear-gradient(to right, #4888D8, #CD2606);
+  display: flex;
+  flex-flow: row-nowrap;
+  align-items: center;
+}
+
+div[class^="status-"]:before {
+  display: block;
+  height: 1.25em;
+  width: 2px;
+  background-color: #FAFAFA;
+  border: 1px solid #333;
+  content: '';
+  transition: all 1s ease-in-out;
+}
+
+div.status-2:before {
+  margin-left: 2%;
+}
+
+div.status-3:before {
+  margin-left: 3%;
+}
+
+div.status-4:before {
+  margin-left: 4%;
+}
+
+div.status-5:before {
+  margin-left: 5%;
+}
+
+div.status-6:before {
+  margin-left: 6%;
+}
+
+div.status-7:before {
+  margin-left: 7%;
+}
+
+div.status-8:before {
+  margin-left: 8%;
+}
+
+div.status-9:before {
+  margin-left: 9%;
+}
+
+div.status-10:before {
+  margin-left: 10%;
+}
+
+div.status-11:before {
+  margin-left: 11%;
+}
+
+div.status-12:before {
+  margin-left: 12%;
+}
+
+div.status-13:before {
+  margin-left: 13%;
+}
+
+div.status-14:before {
+  margin-left: 14%;
+}
+
+div.status-15:before {
+  margin-left: 15%;
+}
+
+div.status-16:before {
+  margin-left: 16%;
+}
+
+div.status-17:before {
+  margin-left: 17%;
+}
+
+div.status-18:before {
+  margin-left: 18%;
+}
+
+div.status-19:before {
+  margin-left: 19%;
+}
+
+div.status-20:before {
+  margin-left: 20%;
+}
+
+div.status-21:before {
+  margin-left: 21%;
+}
+
+div.status-22:before {
+  margin-left: 22%;
+}
+
+div.status-23:before {
+  margin-left: 23%;
+}
+
+div.status-24:before {
+  margin-left: 24%;
+}
+
+div.status-25:before {
+  margin-left: 25%;
+}
+
+div.status-26:before {
+  margin-left: 26%;
+}
+
+div.status-27:before {
+  margin-left: 27%;
+}
+
+div.status-28:before {
+  margin-left: 28%;
+}
+
+div.status-29:before {
+  margin-left: 29%;
+}
+
+div.status-30:before {
+  margin-left: 30%;
+}
+
+div.status-31:before {
+  margin-left: 31%;
+}
+
+div.status-32:before {
+  margin-left: 32%;
+}
+
+div.status-33:before {
+  margin-left: 33%;
+}
+
+div.status-34:before {
+  margin-left: 34%;
+}
+
+div.status-35:before {
+  margin-left: 35%;
+}
+
+div.status-36:before {
+  margin-left: 36%;
+}
+
+div.status-37:before {
+  margin-left: 37%;
+}
+
+div.status-38:before {
+  margin-left: 38%;
+}
+
+div.status-39:before {
+  margin-left: 39%;
+}
+
+div.status-40:before {
+  margin-left: 40%;
+}
+
+div.status-41:before {
+  margin-left: 41%;
+}
+
+div.status-42:before {
+  margin-left: 42%;
+}
+
+div.status-43:before {
+  margin-left: 43%;
+}
+
+div.status-44:before {
+  margin-left: 44%;
+}
+
+div.status-45:before {
+  margin-left: 45%;
+}
+
+div.status-46:before {
+  margin-left: 46%;
+}
+
+div.status-47:before {
+  margin-left: 47%;
+}
+
+div.status-48:before {
+  margin-left: 48%;
+}
+
+div.status-49:before {
+  margin-left: 49%;
+}
+
+div.status-50:before {
+  margin-left: 50%;
+}
+
+div.status-51:before {
+  margin-left: 51%;
+}
+
+div.status-52:before {
+  margin-left: 52%;
+}
+
+div.status-53:before {
+  margin-left: 53%;
+}
+
+div.status-54:before {
+  margin-left: 54%;
+}
+
+div.status-55:before {
+  margin-left: 55%;
+}
+
+div.status-56:before {
+  margin-left: 56%;
+}
+
+div.status-57:before {
+  margin-left: 57%;
+}
+
+div.status-58:before {
+  margin-left: 58%;
+}
+
+div.status-59:before {
+  margin-left: 59%;
+}
+
+div.status-60:before {
+  margin-left: 60%;
+}
+
+div.status-61:before {
+  margin-left: 61%;
+}
+
+div.status-62:before {
+  margin-left: 62%;
+}
+
+div.status-63:before {
+  margin-left: 63%;
+}
+
+div.status-64:before {
+  margin-left: 64%;
+}
+
+div.status-65:before {
+  margin-left: 65%;
+}
+
+div.status-66:before {
+  margin-left: 66%;
+}
+
+div.status-67:before {
+  margin-left: 67%;
+}
+
+div.status-68:before {
+  margin-left: 68%;
+}
+
+div.status-69:before {
+  margin-left: 69%;
+}
+
+div.status-70:before {
+  margin-left: 70%;
+}
+
+div.status-71:before {
+  margin-left: 71%;
+}
+
+div.status-72:before {
+  margin-left: 72%;
+}
+
+div.status-73:before {
+  margin-left: 73%;
+}
+
+div.status-74:before {
+  margin-left: 74%;
+}
+
+div.status-75:before {
+  margin-left: 75%;
+}
+
+div.status-76:before {
+  margin-left: 76%;
+}
+
+div.status-77:before {
+  margin-left: 77%;
+}
+
+div.status-78:before {
+  margin-left: 78%;
+}
+
+div.status-79:before {
+  margin-left: 79%;
+}
+
+div.status-80:before {
+  margin-left: 80%;
+}
+
+div.status-81:before {
+  margin-left: 81%;
+}
+
+div.status-82:before {
+  margin-left: 82%;
+}
+
+div.status-83:before {
+  margin-left: 83%;
+}
+
+div.status-84:before {
+  margin-left: 84%;
+}
+
+div.status-85:before {
+  margin-left: 85%;
+}
+
+div.status-86:before {
+  margin-left: 86%;
+}
+
+div.status-87:before {
+  margin-left: 87%;
+}
+
+div.status-88:before {
+  margin-left: 88%;
+}
+
+div.status-89:before {
+  margin-left: 89%;
+}
+
+div.status-90:before {
+  margin-left: 90%;
+}
+
+div.status-91:before {
+  margin-left: 91%;
+}
+
+div.status-92:before {
+  margin-left: 92%;
+}
+
+div.status-93:before {
+  margin-left: 93%;
+}
+
+div.status-94:before {
+  margin-left: 94%;
+}
+
+div.status-95:before {
+  margin-left: 95%;
+}
+
+div.status-96:before {
+  margin-left: 96%;
+}
+
+div.status-97:before {
+  margin-left: 97%;
+}
+
+div.status-98:before {
+  margin-left: 98%;
+}
+
+div.status-99:before {
+  margin-left: 99%;
+}

@@ -2,32 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Random Number Game</title>
+		<title>Play Mode</title>
 		<script src="jquery.min.js"></script>
 		<script src="scripts/client-script.js"></script>
+		<link rel="stylesheet" href="normalize.css" />
+		<link rel="stylesheet" href="style.css" /> <!-- For the status indicator -->
 		<link rel="stylesheet" href="status.css" /> <!-- For the status indicator -->
-
+		<style>
+			.container {
+				display: none;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Guess The Number</h1>
-<!-- Game Setup -->
-		<div id='setupDiv'>
-			<p>Select Number of Players:</p>
-			<select class="numPlayers" onchange="addNames(value)">
-				<option value="-">-</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-			</select>
-			<div class = "nameIn">
-			<!-- player name inputs -->
-			</div>
-			<p>Select Maximum Number:</p>
-			<input type="number"></input>
-			<button class="btn-start">Start Game!</button>
-		</div>
+	<div id="startscreen">
+	<input type="number" id="maxnum" placeholder="max number" />
+	<button onclick="startGame()"> START </button>
+	</div>
+	<div class="container">
+		<div class="btn-guess-container"><button class="btn-guess">Check Guesses</button></div>
+	</div>
 	</body>
 </html>

@@ -9,12 +9,19 @@ var startGame = function() {
 		type: 'post',
 		dataType: 'json',
 		data: {
-			max: 100
+			max: $("#maxnum").val()
 		},
 	})
 	.done( function( data ) {
 		console.log( 'Data:', data );
 	});
+/*	for ( var i = 0; i < 6; i++ ) {
+		var div = $("<div />", { class: "container" + i});
+			div.html( '<h2>Player ' + ( i + 1 ) + '</h2><input type="number" /><div class="status-1"></div>' );
+		$(".container").append( div );
+	}*/
+	$("#startscreen").hide();
+	$(".container").show();
 };
 
 var totalRounds = function() {
@@ -76,7 +83,7 @@ var submitGuess = function( something ) {
 			$( '.' + item ).children( 'div[class^="status-"]' ).removeClass().addClass( 'status-' + Math.floor( data[item].rating * 100 ) );
 			if( data[item].rating === 1 ) {
 				// Winner Winner Chicken Dinner
-				alert( "YOU WIN!" );
+				alert( "YOU WIN: Player" + data[item].player );
 				return false;
 			}
 		}
@@ -111,31 +118,31 @@ $(document).ready(function() {
 
 $(document).ready(function(){
   //name 'submit'
-
+  startGame();
 });
 
 var addNames = function(totalPlayers){
   console.log('Selected Number of Players:', totalPlayers);
   //empty div
   $('.nameIn').empty();
-if (totalPlayers === '-') {
-    alert('Please Select Number of Players');
-} else {
+	if (totalPlayers === '-') {
+	    alert('Please Select Number of Players');
+	} else {
   //append name forms based on selected # of players
     for (var i = 0; i < totalPlayers; i++) {
         $('.nameIn').append('<input type="text" class="playerName" placeholder="Player Name"></input>');
     };
   //add button for submitting all names at once
-    $('.nameIn').append('<button class="submitName">Submit</button')
   };
   $('body').on('click', '.submitName', function(){
     //store player name
   var names = document.getElementsByClassName('playerName').value;
   // var names = document.getElementById('playerName').value;
     $('.playerName').each(function(){
-       playerNameArray.push(names);
+       playerNameArray.push($( this ).val());
 
-       })
+       });
+
 
 
 

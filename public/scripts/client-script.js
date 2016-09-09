@@ -48,8 +48,11 @@ var submitGuess = function( something ) {
 
 	$( 'div[class^=player-]' ).each( function() {
 		var id = $( this ).data("index");
+		var num = $( this ).children("input").val();
+		$( this ).children("input").attr("disabled", true);
 		guessData["player-" + id] = {
-			number: 1
+			number: $( this ).children("input").val(),
+			player: Number( id )
 		};
 	});
 
@@ -65,6 +68,16 @@ var submitGuess = function( something ) {
 	})
 	.done( function( data ) {
 		console.log( 'Data:', data );
+		for( var item in data ) {
+			console.log( "Rating:", data[item].rating );
+			$( '.' + item ).children( 'div[class^="status-"]' ).removeClass().addClass( 'status-' + ( data[item].rating * 100 ) );
+			if( data[item].rating === 1 ) {
+				// Winner Winner Chicken Dinner
+				alert( "YOU WIN!" );
+				return false;
+			}
+		}
+		$( 'div[class^=player-]' ).children("input").attr("disabled", false);
 	});
 };
 

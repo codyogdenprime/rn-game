@@ -35,9 +35,13 @@ app.post('/guess', urlencodedParser, function(req, res){
 
 	console.log( "type:", typeof req.body.guesses );
 
-	for ( var i in req.body.guesses ) {
-		console.log( i, req.body.guesses[i].number );
+	var myob = req.body.guesses;
+
+	for ( var i in myob ) {
+		myob[i].rating = 1;
 	}
+
+	res.send( myob );
 
 
 });

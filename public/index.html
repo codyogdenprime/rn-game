@@ -8,28 +8,25 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+		<h1>Guess The Number</h1>
 <!-- Game Setup -->
 		<div id='setupDiv'>
-			<p>Number of Players</p>
-			<select class="numPlayers">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-				<option>6</option>
+			<p>Select Number of Players:</p>
+			<select class="numPlayers" onchange="addNames(value)">
+				<option value="-">-</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
 			</select>
-			<p>Maximum Number</p>
+			<div class = "nameIn">
+			<!-- player name inputs -->
+			</div>
+			<p>Select Maximum Number:</p>
 			<input type="number"></input>
 			<button class="btn-start">Start Game!</button>
-		</div>
-<!-- Play place -->
-		<div id="playDiv">
-			<div class="roundCount">Round: 1</div>
-			<div class="playerIn">
-				<!-- player inputs and stuff -->
-
-			</div>
 		</div>
 	</body>
 </html>

@@ -10,13 +10,12 @@ var compareGuesses = require('../modules/compareGuesses');
 var gameNumber;
 
 app.listen( 3000, "localhost", function() {
-	console.log( "I'm listening again." );
+	console.log( "Lisening on port 3000" );
 } );
 
 app.get( '/', function( req, res ) {
 
 	console.log( "index sent to client" );
-
 	res.sendFile( path.resolve( 'public/index.html' ) );
 } );
 
@@ -35,3 +34,4 @@ app.post('/guess', urlencodedParser, function(req, res){
 	var finishedArray = compareGuesses(req.body.data, guessNumber);
 	res.send(finishedArray);
 });
+app.use( express.static( 'node_modules/normalize.css' ) );

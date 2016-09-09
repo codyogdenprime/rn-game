@@ -6,7 +6,7 @@ var startGame = function() {
 		type: 'post',
 		dataType: 'json',
 		data: {
-			max: 10
+			max: 100
 		},
 	})
 	.done( function( data ) {
@@ -43,23 +43,41 @@ var endGame = function() {
 };
 
 var submitGuess = function( something ) {
+
+	var guessData = new Object();
+
+	$( 'div[class^=player-]' ).each( function() {
+		var id = $( this ).data("index");
+		var num = $( this ).children("input").val();
+		$( this ).children("input").attr("disabled", true);
+		guessData["player-" + id] = {
+			number: $( this ).children("input").val(),
+			player: Number( id )
+		};
+	});
+
+	console.log( guessData );
+
 	$.ajax({
 		url: '/guess',
 		type: 'post',
 		dataType: 'json',
 		data: {
-			guesses: {
-				"1": {
-					number: 2,
-				},
-				"2": {
-					number: 1,
-				}
-			}
+			guesses: guessData
 		}
 	})
 	.done( function( data ) {
 		console.log( 'Data:', data );
+		for( var item in data ) {
+			console.log( "Rating:", Math.floor( data[item].rating * 100 ) );
+			$( '.' + item ).children( 'div[class^="status-"]' ).removeClass().addClass( 'status-' + Math.floor( data[item].rating * 100 ) );
+			if( data[item].rating === 1 ) {
+				// Winner Winner Chicken Dinner
+				alert( "YOU WIN!" );
+				return false;
+			}
+		}
+		$( 'div[class^=player-]' ).children("input").attr("disabled", false);
 	});
 };
 

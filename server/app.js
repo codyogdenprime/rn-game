@@ -31,9 +31,7 @@ app.post('/ready', urlencodedParser, function(req, res){
 
 app.post('/guess', urlencodedParser, function(req, res){
 	console.log('guesses made');
-	var finishedGuesses = compareGuesses(req.body.guesses, guessNumber);
+	var finishedGuesses = compareGuesses(req.body.guesses, gameNumber);
 	res.send(finishedGuesses);
-});
-
 });
 app.use( express.static( 'node_modules/normalize.css' ) );

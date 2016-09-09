@@ -43,19 +43,24 @@ var endGame = function() {
 };
 
 var submitGuess = function( something ) {
+
+	var guessData = new Object();
+
+	$( 'div[class^=player-]' ).each( function() {
+		var id = $( this ).data("index");
+		guessData["player-" + id] = {
+			number: 1
+		};
+	});
+
+	console.log( guessData );
+
 	$.ajax({
 		url: '/guess',
 		type: 'post',
 		dataType: 'json',
 		data: {
-			guesses: {
-				"1": {
-					number: 2,
-				},
-				"2": {
-					number: 1,
-				}
-			}
+			guesses: guessData
 		}
 	})
 	.done( function( data ) {

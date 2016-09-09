@@ -3,9 +3,33 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Random Number Game</title>
+		<script src="vendors/jquery-3.1.0.min.js"></script>
 		<script src="scripts/client-script.js"></script>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+<!-- Game Setup -->
+		<div id='setupDiv'>
+			<p>Number of Players</p>
+			<select class="numPlayers">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+			</select>
+			<p>Maximum Number</p>
+			<input type="number"></input>
+			<button class="btn-start">Start Game!</button>
+		</div>
+<!-- Play place -->
+		<div id="playDiv">
+			<div class="roundCount">Round: 1</div>
+			<div class="playerIn">
+				<!-- player inputs and stuff -->
 
+			</div>
+		</div>
 	</body>
 </html>

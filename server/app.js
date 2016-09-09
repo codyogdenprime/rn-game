@@ -4,7 +4,7 @@ var app = express();
 
 var path = require( 'path' );
 var bodyParser = require( 'body-parser' );
-var urlencodedParser = bodyParser.urlencoded({extended: false});
+var urlencodedParser = bodyParser.urlencoded({extended: true});
 var randomNumbers = require('../modules/randomNumbers');
 var compareGuesses = require('../modules/compareGuesses');
 var gameNumber;
@@ -30,8 +30,12 @@ app.post('/ready', urlencodedParser, function(req, res){
 });
 
 app.post('/guess', urlencodedParser, function(req, res){
-	console.log('guesses made');
-	var finishedArray = compareGuesses(req.body.data, guessNumber);
-	res.send(finishedArray);
+	
+	var result = compareGuesses( req.body , gameNumber );
+	console.log( result );
+/*	console.log('guesses made');
+	console.log( "Data:", req.body.data );
+	var finishedArray = compareGuesses( req.body.data , gameNumber);
+	res.send(finishedArray);*/
 });
 app.use( express.static( 'node_modules/normalize.css' ) );

@@ -1,8 +1,12 @@
-var compareGuesses = function(arrayGuesses, gameNumber){
-  for (var i = 0; i < arrayGuesses.length; i++) {
-    arrayGuesses[i].percentage = arrayGuesses[i].guess / gameNumber;
-  }
-  return arrayGuesses;
+var compareGuesses = function( body, gameNumber){
+
+	for ( var i in body.data ) {
+		console.log( body.data[i] );
+		body.data[i].rating = 1;
+		console.log( body.data[i].rating );
+		console.log( "Changed:", body.data[i] );
+	}
+
 };
 
 module.exports = compareGuesses;

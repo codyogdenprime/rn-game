@@ -6,7 +6,7 @@ var startGame = function() {
 		type: 'post',
 		dataType: 'json',
 		data: {
-			action: "start",
+			max: 10
 		},
 	})
 	.done( function( data ) {
@@ -42,14 +42,14 @@ var endGame = function() {
 	});
 };
 
-var submitGuess = function() {
+var submitGuess = function( something ) {
 	$.ajax({
 		url: '/guess',
 		type: 'post',
 		dataType: 'json',
 		data: {
-			action: "start",
-		},
+			name: "Hello world"
+		}
 	})
 	.done( function( data ) {
 		console.log( 'Data:', data );

@@ -1,22 +1,32 @@
 var express = require( 'express' ); // Require Express Module
-
-var harrypotter = express();
-
+var app = express();
 var path = require( 'path' );
-
 var bodyParser = require( 'body-parser' );
-
 var urlencodedParser = bodyParser.urlencoded({extended: false});
+var randomNumbers = require('../modules/randomNumbers');
+var compareGuesses = require('../modules/compareGuesses');
+var gameNumber;
 
-harrypotter.listen( 3000, "localhost", function() {
+app.listen( 3000, "localhost", function() {
 	console.log( "I'm listening again." );
 } );
 
-harrypotter.get( '/', function( req, res ) {
-	console.log( "Harry Potter Lives!" );
+app.get( '/', function( req, res ) {
+	console.log( "index sent to client" );
 	res.sendFile( path.resolve( 'public/index.html' ) );
 } );
 
-harrypotter.use( express.static( 'public' ) );
+app.use( express.static( 'public' ) );
 
-//Cody Change
+app.post('/ready', urlencodedParser, function(req, res){
+	console.log('ready to play');
+	gameNumber = randomNumbers(0, req.body.max);
+	var readyObject = {readyForGuess: true};
+	res.send(readyObject);
+});
+
+app.post('/guess', urlencodedParser, function(req, res){
+	console.log('guesses made');
+	var finishedArray = compareGuesses(req.body, guessNumber);
+	res.send(finishedArray);
+});

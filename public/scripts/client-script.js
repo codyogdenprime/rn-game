@@ -2,7 +2,7 @@ var roundCount = 1;
 
 var startGame = function() {
 	$.ajax({
-		url: '/api',
+		url: '/ready',
 		type: 'post',
 		dataType: 'json',
 		data: {
@@ -12,7 +12,6 @@ var startGame = function() {
 	.done( function( data ) {
 		console.log( 'Data:', data );
 	});
-	
 };
 
 var totalRounds = function() {
@@ -30,19 +29,49 @@ var abortGame = function() {
 };
 
 var endGame = function() {
-	// Someone wins
+	$.ajax({
+		url: '/end',
+		type: 'post',
+		dataType: 'json',
+		data: {
+			action: "start",
+		},
+	})
+	.done( function( data ) {
+		console.log( 'Data:', data );
+	});
 };
 
 var submitGuess = function() {
-
+	$.ajax({
+		url: '/guess',
+		type: 'post',
+		dataType: 'json',
+		data: {
+			action: "start",
+		},
+	})
+	.done( function( data ) {
+		console.log( 'Data:', data );
+	});
 };
 
 var restartGame = function() {
-
-};
+	$.ajax({
+		url: '/ready',
+		type: 'post',
+		dataType: 'json',
+		data: {
+			action: "start",
+		},
+	})
+	.done( function( data ) {
+		console.log( 'Data:', data );
+	});
+};	
 
 var setStatus = function( player, status ) {
-	return $( '.player'+ player + ' div[class^="status-"]' ).removeClass().addClass( 'status-' + status );
+	return $( 'div.player-' + player + ' div[class^="status-"]' ).removeClass().addClass( 'status-' + ( status * 100 ) );
 };
 
 $(document).ready(function() {

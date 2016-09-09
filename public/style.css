@@ -1,0 +1,27 @@
+body {
+	background-color: #333;
+}
+
+.container {
+	display: flex;
+	align-itmes: center;
+	align-content: center;
+	flex-flow: row wrap;
+	max-width: 1200px;
+	margin: 0 auto;
+	justify-content: center;
+}
+
+.container > div {
+	flex: 0 0 20%;
+	padding: 1em 10%;
+	text-align: center;
+}
+
+h2 {
+	color: #FAFAFA
+}
+
+.btn-guess-container {
+	text-align: center;
+}

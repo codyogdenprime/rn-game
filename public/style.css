@@ -1,3 +1,4 @@
+
 body {
 	background-color: #333;
 }
@@ -25,3 +26,18 @@ h2 {
 .btn-guess-container {
 	text-align: center;
 }
+
+* {
+  font-family: Arial, sans-serif, serif;
+}
+
+#setupDiv {
+  padding-top: 5px;
+  width: 75%;
+  margin: auto;
+}
+
+#playDiv {
+
+}
+

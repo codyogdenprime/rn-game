@@ -9,6 +9,25 @@
 
 	</head>
 	<body>
-		
+		<h1>Guess The Number</h1>
+<!-- Game Setup -->
+		<div id='setupDiv'>
+			<p>Select Number of Players:</p>
+			<select class="numPlayers" onchange="addNames(value)">
+				<option value="-">-</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+			</select>
+			<div class = "nameIn">
+			<!-- player name inputs -->
+			</div>
+			<p>Select Maximum Number:</p>
+			<input type="number"></input>
+			<button class="btn-start">Start Game!</button>
+		</div>
 	</body>
 </html>

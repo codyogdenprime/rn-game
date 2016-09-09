@@ -27,6 +27,6 @@ app.post('/ready', urlencodedParser, function(req, res){
 
 app.post('/guess', urlencodedParser, function(req, res){
 	console.log('guesses made');
-	var finishedArray = compareGuesses(req.body, guessNumber);
+	var finishedArray = compareGuesses(req.body.data, guessNumber);
 	res.send(finishedArray);
 });

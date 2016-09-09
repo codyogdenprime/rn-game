@@ -4,7 +4,7 @@ var compareGuesses = function( body, gameNumber){
 		console.log( body.data[i] );
 		body.data[i].rating = 1;
 		console.log( body.data[i].rating );
-		console.log( "Changed:", body.data[i] );
+		console.log( "Changed:", body.data );
 	}
 
 };

@@ -48,7 +48,14 @@ var submitGuess = function( something ) {
 		type: 'post',
 		dataType: 'json',
 		data: {
-			name: "Hello world"
+			guesses: {
+				"1": {
+					number: 2,
+				},
+				"2": {
+					number: 1,
+				}
+			}
 		}
 	})
 	.done( function( data ) {

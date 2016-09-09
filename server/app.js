@@ -30,12 +30,15 @@ app.post('/ready', urlencodedParser, function(req, res){
 });
 
 app.post('/guess', urlencodedParser, function(req, res){
-	
-	var result = compareGuesses( req.body , gameNumber );
-	console.log( result );
-/*	console.log('guesses made');
-	console.log( "Data:", req.body.data );
-	var finishedArray = compareGuesses( req.body.data , gameNumber);
-	res.send(finishedArray);*/
+
+	console.log( req.body.guesses );
+
+	console.log( "type:", typeof req.body.guesses );
+
+	for ( var i in req.body.guesses ) {
+		console.log( i, req.body.guesses[i].number );
+	}
+
+
 });
 app.use( express.static( 'node_modules/normalize.css' ) );

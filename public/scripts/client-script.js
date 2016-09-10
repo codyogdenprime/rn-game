@@ -1,7 +1,5 @@
 var totalPlayers = $('option').value;//selected number of players
-
-var playerNameArray = [];//store names here
-var roundCount = 1;
+var roundCount = 0;
 
 var startGame = function() {
 	$.ajax({
@@ -20,8 +18,23 @@ var startGame = function() {
 			div.html( '<h2>Player ' + ( i + 1 ) + '</h2><input type="number" /><div class="status-1"></div>' );
 		$(".container").append( div );
 	}*/
+	for ( var i = 0; i < $("#player-count").val(); i++ ) {
+
+		var div = $("<div />", { class: "player-" + ( i + 1 ) } );
+		var h2 = $("<h2 />").html( "Player " + ( i + 1 ) );
+		var input = $("<input />").attr("type", "number");
+		var status = $("<div />", { class: "status-1" } );
+
+		div.data("index", ( i + 1 ) );
+		div.append( h2 );
+		div.append( input );
+		div.append( status );
+		$(".container").append( div );
+	}
 	$("#startscreen").hide();
 	$(".container").show();
+	$("main").show();
+	$(".setup-mode").hide();
 };
 
 var totalRounds = function() {
@@ -35,6 +48,11 @@ var abortGame = function() {
 	var abortCheck = confirm("Are you sure you'd like to abort?");
 
 	if( !abortCheck ) return false;
+
+	$("#startscreen").show();
+	$(".container").hide();
+	$(".container").empty();
+	$(".setup-mode").show();
 
 };
 
@@ -84,10 +102,12 @@ var submitGuess = function( something ) {
 			if( data[item].rating === 1 ) {
 				// Winner Winner Chicken Dinner
 				alert( "YOU WIN: Player" + data[item].player );
+				$(".btn-abort").hide();
 				return false;
 			}
 		}
 		$( 'div[class^=player-]' ).children("input").attr("disabled", false);
+		totalRounds();
 	});
 };
 
@@ -118,7 +138,7 @@ $(document).ready(function() {
 
 $(document).ready(function(){
   //name 'submit'
-  startGame();
+
 });
 
 var addNames = function(totalPlayers){

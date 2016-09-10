@@ -8,19 +8,34 @@
 		<link rel="stylesheet" href="normalize.css" />
 		<link rel="stylesheet" href="style.css" /> <!-- For the status indicator -->
 		<link rel="stylesheet" href="status.css" /> <!-- For the status indicator -->
-		<style>
-			.container {
-				display: none;
-			}
-		</style>
+
 	</head>
 	<body>
-	<div id="startscreen">
-	<input type="number" id="maxnum" placeholder="max number" />
-	<button onclick="startGame()"> START </button>
+	<div class="setup-mode">
+		<div>
+			<div>
+				<input type="number" id="maxnum" placeholder="max number" /><br/><br/>
+			</div>
+			<div>Number of Players
+				<select id="player-count">
+					<option>1</option>
+					<option selected>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+				</select><br/><br/>
+			</div>
+			<div>
+				<button class="btn-start">Start</button>
+			</div>
+		</div>
 	</div>
-	<div class="container">
-		<div class="btn-guess-container"><button class="btn-guess">Check Guesses</button></div>
-	</div>
+	<main>
+		<div>Total Rounds: <span class="total-rounds"></span></div>
+		<div class="container">
+		</div>
+		<div class="btn-guess-container"><button class="btn-guess">Check Guesses</button> <button class="btn-abort">Abort</button> <button class="btn-restart">New Game</button></div>
+	</main>
 	</body>
 </html>

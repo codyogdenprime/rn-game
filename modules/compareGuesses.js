@@ -7,7 +7,7 @@ var compareGuesses = function(guesses, gameNumber){
 	if( num - given > 0 ) {
 		abs = given / num;
 	} else {
-		abs = ( num - ( Math.abs( num - given ) ) ) / num;
+		abs = Math.abs( ( num - ( Math.abs( num - given ) ) ) / num );
 	}
 
     guesses[i].rating = abs;
